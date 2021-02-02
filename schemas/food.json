@@ -1,0 +1,26 @@
+{
+  "schema": {
+    "title": "Food & Nutrition",
+    "type": "object",
+    "properties": {
+      "restrictions": {
+        "type": "string",
+        "fieldType": "selectlist",
+        "displayType": "select",
+        "title": "Food Restrictions",
+        "enum": [ "No Restrictions", "Vegetarian", "Vegan", "Pescatarian" ]
+      },
+      "allergies": {
+        "type": "string",
+        "format": "textarea",
+        "title": "List any food allergies (comma separated)"
+      }
+    }
+  },
+  "template": {
+    "id": "http://identity.foundation/schemas/food.json",
+    "@context": [ "https://www.w3.org/2018/credentials/v1" ],
+    "type": [ "VerifiableCredential" ],
+    "credentialSubject": "{{$}}"
+  }
+}

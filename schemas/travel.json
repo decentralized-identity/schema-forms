@@ -1,0 +1,105 @@
+{
+  "schema": {
+    "title": "Travel Preferences",
+    "type": "object",
+    "properties": {
+      "flights": {
+        "title": "Flights",
+        "type": "object",
+        "properties": {
+          "seat": {
+            "type": "array",
+            "format": "checkbox",
+            "uniqueItems": true,
+            "title": "Seat Type",
+            "items": {
+              "type": "string",
+              "enum": [ "Aisle", "Middle", "Window" ]
+            }
+          },
+          "section": {
+            "type": "array",
+            "format": "checkbox",
+            "uniqueItems": true,
+            "title": "Seat Section",
+            "items": {
+              "type": "string",
+              "enum": [ "Front", "Rear", "Emergency Rows" ]
+            }
+          },
+          "stops": {
+            "type": "number",
+            "fieldType": "selectlist",
+            "displayType": "select",
+            "title": "Maximum Stops (if possible)",
+            "enum": [ -1, 3, 2, 1, 0 ],
+            "options": {
+              "enum_titles": [ "Any", "3", "2", "1", "0" ]
+            }
+          }
+        }
+      },        
+      "lodging": {
+        "title": "Hotels & Lodging",
+        "type": "object",
+        "properties": {
+          "room": {
+            "type": "array",
+            "format": "checkbox",
+            "uniqueItems": true,
+            "title": "Room Preferences",
+            "items": {
+              "type": "string",
+              "enum": [ "Ground floor room", "Corner room", "Near fitness center", "Away from elevator/stairs" ]
+            }
+          },
+          "bed": {
+            "type": "array",
+            "format": "checkbox",
+            "uniqueItems": true,
+            "title": "Bed Preference",
+            "items": {
+              "type": "string",
+              "enum": [ "Single Bed", "Multiple Beds" ]
+            }
+          }
+        }
+      },
+      "vehicleRental": {
+        "title": "Vehicle Rental",
+        "type": "object",
+        "properties": {
+          "vehicleTypes": {
+            "type": "array",
+            "format": "checkbox",
+            "uniqueItems": true,
+            "title": "Vehicle Types",
+            "items": {
+              "type": "string",
+              "enum": [ "Compact", "Coupe", "Sedan", "SUV", "Truck", "Van", "Luxury Vehicles", "Sports Cars" ]
+            }
+          },
+          "maxPrice": {
+            "type": "number",
+            "format": "range",
+            "title": "Maximum Price (per day)",
+            "minimum": 0,
+            "maximum": 1000
+          },
+          "childSeats": {
+            "type": "number",
+            "format": "number",
+            "title": "Child Seats",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  },
+  "template": {
+    "id": "http://identity.foundation/schemas/travel.json",
+    "@context": [ "https://www.w3.org/2018/credentials/v1" ],
+    "type": [ "VerifiableCredential" ],
+    "credentialSubject": "{{$}}"
+  }
+}

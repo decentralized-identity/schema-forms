@@ -1,0 +1,35 @@
+{
+  "name": "schema-forms",
+  "version": "0.0.1",
+  "description": "Generating forms from JSON Schema objects and rendering outputs into user-defined JSON documents",
+  "keywords": [
+    "json",
+    "schema",
+    "credentials"
+  ],
+  "license": "Apache 2",
+  "author": "Daniel Buchner",
+  "scripts": {
+    "edit": "node -e \"require('spec-up')()\"",
+    "render": "node -e \"require('spec-up')({ nowatch: true })\""
+  },
+  "dependencies": {
+    "fs-extra": "8.1.0",
+    "globby": "11.0.0",
+    "gulp": "^4.0.2",
+    "gulp-bump": "3.2.0",
+    "gulp-concat": "2.6.1",
+    "gulp-connect": "5.7.0",
+    "gulp-run": "1.7.1",
+    "gulp-terser": "1.2.0",
+    "jsonpath-plus": "^5.0.2",
+    "koa": "2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-logger": "3.2.1",
+    "koa-router": "9.4.0",
+    "koa-static": "^5.0.0",
+    "merge-stream": "2.0.0",
+    "node-fetch": "2.6.1",
+    "spec-up": "0.9.101"
+  }
+}

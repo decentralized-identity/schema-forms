@@ -1,0 +1,39 @@
+{
+  "schema": {
+    "title": "Accessability",
+    "type": "object",
+    "properties": {
+      "wheelchair": {
+        "type": "boolean",
+        "format": "checkbox",
+        "title": "I need wheelchair access"
+      },
+      "hearingImpairment": {
+        "type": "boolean",
+        "format": "checkbox",
+        "title": "I am hearing impaired"
+      },
+      "visionImpairment": {
+        "type": "boolean",
+        "format": "checkbox",
+        "title": "I have a vision impairment"
+      },
+      "colorBlind": {
+        "type": "boolean",
+        "format": "checkbox",
+        "title": "I am color blind"
+      },
+      "lightSensitivity": {
+        "type": "boolean",
+        "format": "checkbox",
+        "title": "I am sensitive to light"
+      }
+    }
+  },
+  "template": {
+    "id": "http://identity.foundation/schemas/accessability.json",
+    "@context": [ "https://www.w3.org/2018/credentials/v1" ],
+    "type": [ "VerifiableCredential" ],
+    "credentialSubject": "{{$}}"
+  }
+}
