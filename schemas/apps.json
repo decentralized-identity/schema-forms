@@ -1,0 +1,92 @@
+{
+  "schema": {
+    "title": "App Preferences",
+    "type": "object",
+    "properties": {
+      "theme": {
+        "title": "Theme & Appearance",
+        "type": "object",
+        "properties": {
+          "colorScheme": {
+            "type": "string",
+            "fieldType": "selectlist",
+            "displayType": "select",
+            "title": "Color Scheme",
+            "enum": [ "Light Mode", "Dark Mode" ]
+          },
+          "fontSize": {
+            "type": "string",
+            "fieldType": "selectlist",
+            "displayType": "select",
+            "title": "Font Size",
+            "enum": [ "Very Small", "Small", "Medium", "Large", "Very Large" ]
+          }
+        }
+      },        
+      "video": {
+        "title": "Video & Animations",
+        "type": "object",
+        "properties": {
+          "autoplay": {
+            "type": "boolean",
+            "format": "checkbox",
+            "title": "Allow autoplay"
+          },
+          "reduceMotion": {
+            "type": "boolean",
+            "format": "checkbox",
+            "title": "Reduce content motion and animations"
+          }
+        }
+      },
+      "sound": {
+        "title": "Sound",
+        "type": "object",
+        "properties": {
+          "level": {
+            "type": "string",
+            "fieldType": "selectlist",
+            "displayType": "select",
+            "title": "Default Volume",
+            "enum": [ "Quiet", "Soft", "Medium", "Loud", "Very Loud" ]
+          }
+        }
+      },
+      "notifications": {
+        "title": "Notifications",
+        "type": "object",
+        "properties": {
+          "frequency": {
+            "type": "string",
+            "fieldType": "selectlist",
+            "displayType": "select",
+            "title": "Maximum notification frequency",
+            "enum": [ "Never", "Weekly", "Daily", "Hourly", "Realtime" ]
+          }
+        }
+      },
+      "content": {
+        "title": "Content",
+        "type": "object",
+        "properties": {
+          "offensiveLanguage": {
+            "type": "boolean",
+            "format": "checkbox",
+            "title": "Attempt to filter out offensive language"
+          },
+          "graphicContent": {
+            "type": "boolean",
+            "format": "checkbox",
+            "title": "Attempt to filter out graphic content"
+          }
+        }
+      }
+    }
+  },
+  "template": {
+    "id": "http://identity.foundation/schemas/apps.json",
+    "@context": [ "https://www.w3.org/2018/credentials/v1" ],
+    "type": [ "VerifiableCredential" ],
+    "credentialSubject": "{{$}}"
+  }
+}
