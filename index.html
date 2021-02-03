@@ -36,11 +36,22 @@
 
 <body>
 
+  <div>
+    <select id="picker">
+      <option value="schemas/apps.json">App Preferences</option>
+      <option value="schemas/travel.json">Travel Preferences</option>
+      <option value="schemas/accessability.json">Accessability Preferences</option>
+    </select>
+  </div>
 
-  <schema-form schema="schemas/travel.json" submit="Get Credential" download></schema-form>
+  <schema-form id="schema_form_example" schema="schemas/apps.json" submit="Get Credential" download></schema-form>
   
+  <script>
+    picker.addEventListener('change', e => {
+      schema_form_example.schema = picker.value;
+    })
+  </script>
 
-  <script src="js/global.js"></script>
 </body>
 
 </html>
