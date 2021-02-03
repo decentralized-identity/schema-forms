@@ -1,17 +1,9 @@
 
 let matchReplacerRegex = /\$\{/gmi;
 let replaceValuesRegex = /"\s*\{\{\s*([^\}\s]*)\s*\}\}\s*"/gmi;
-let JSONPath;
-const imports = Promise.all([
-  './jsonpath-plus.js',
-].map(path => import(path)))
- .then(modules => {
-  JSONPath = modules[0].JSONPath;
-});
 
-export default {
-  async render(template, data) {
-    await imports;
+const JSONRender = {
+  render(template, data) {
     template = typeof template === 'string' ? template : JSON.stringify(template);
     let replaced = template.replace(replaceValuesRegex, (m, prop) => {
       let value = JSONPath({ path: prop.trim(), json: data })[0];
@@ -32,3 +24,5 @@ export default {
     })
   }
 }
+
+export { JSONRender };
