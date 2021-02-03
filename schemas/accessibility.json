@@ -1,6 +1,6 @@
 {
   "schema": {
-    "title": "Accessability",
+    "title": "Accessibility",
     "type": "object",
     "properties": {
       "wheelchair": {
@@ -31,7 +31,7 @@
     }
   },
   "template": {
-    "id": "http://identity.foundation/schemas/accessability.json",
+    "id": "http://identity.foundation/schemas/accessibility.json",
     "@context": [ "https://www.w3.org/2018/credentials/v1" ],
     "type": [ "VerifiableCredential" ],
     "credentialSubject": "{{$}}"
