@@ -19,13 +19,13 @@
   <!-- Place favicon.ico in the root directory -->
 
   <script>
-    let assetBase = location.hostname === 'identity.foundation' ? 'https://ghcdn.rawgit.org/decentralized-identity/schema-forms/main/dist/' : 'dist/';
+    let assetBase = location.hostname === 'identity.foundation' ? 'https://rawcdn.githack.com/decentralized-identity/schema-forms/343a5adeb8f8f0b27b6edccf8e48dcb67292ff91/' : '';
     let schemaFormScript = document.createElement('script');
         schemaFormScript.type = 'module';
-        schemaFormScript.src = assetBase + 'schema-form-element.js';
+        schemaFormScript.src = assetBase + 'dist/schema-form-element.js';
     let schemaFormStyle = document.createElement('link');
         schemaFormStyle.rel = 'stylesheet';
-        schemaFormStyle.href = assetBase + 'schema-form-element.css';
+        schemaFormStyle.href = assetBase + 'dist/schema-form-element.css';
     document.head.append(schemaFormStyle, schemaFormScript);
   </script>
 
